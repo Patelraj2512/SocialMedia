@@ -18,20 +18,21 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;  /* Light gray background */
+            background-color: #f4f4f4;  /* Soft light gray background */
             color: #333;  /* Dark gray text */
             text-align: center;
             line-height: 1.6;
             padding: 20px;
         }
 
+        /* Container Box Styling */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background-color: #ffffff;  /* White background for container */
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);  /* Soft gradient background for the container */
             padding: 40px;
-            border-radius: 8px;  /* Soft rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for card effect */
+            border-radius: 10px;  /* Rounded corners */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);  /* Deeper shadow for more contrast */
         }
 
         header {
@@ -84,6 +85,7 @@
             margin-bottom: 40px;
         }
 
+        /* Adjust bio font and paragraph style */
         .bio {
             margin-bottom: 60px;
         }
@@ -93,6 +95,25 @@
             color: #2c3e50;
             max-width: 800px;
             margin: 0 auto 40px;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        /* Adjust text for smaller screens */
+        @media screen and (max-width: 768px) {
+            .bio-description {
+                font-size: 16px;  /* Smaller font size on mobile */
+                line-height: 1.6;  /* Slightly tighter line height */
+                padding: 0 15px;   /* Add padding to prevent text from touching the edges */
+            }
+
+            h1 {
+                font-size: 40px;  /* Slightly smaller header on mobile */
+            }
+
+            .title {
+                font-size: 18px;  /* Smaller title on mobile */
+            }
         }
 
         .social-links {
@@ -226,13 +247,15 @@
         const fileInput = document.getElementById('file-input');
         const profilePic = document.getElementById('profile-pic');
         const cameraIcon = document.getElementById('camera-icon');
-        const correctPassword = "raj123"; // Set your password here (for demo purposes)
-
+        
+        // Storing the password as a hashed value for better security (though not foolproof)
+        const hashedPassword = "0c4db0cdcd3db973d647dd6d847249c1";  // Hash of "patelraj2512" using MD5
+        
         // Check if there is a saved profile picture in localStorage
         window.onload = function() {
             const savedImage = localStorage.getItem('profilePic');
             if (savedImage) {
-                profilePic.src = savedImage; // Set the saved image as profile picture
+                profilePic.src = savedImage;  // Set the saved image as profile picture
             }
         };
 
@@ -241,8 +264,9 @@
             // Prompt user for password before allowing file upload
             let password = prompt("Please enter the password to change the profile picture:");
 
-            // Check if password is correct
-            if (password === correctPassword) {
+            // Hash the input password and compare with stored hash
+            const hashedInputPassword = md5(password);
+            if (hashedInputPassword === hashedPassword) {
                 // Directly trigger file input after password validation
                 fileInput.click();
             } else {
@@ -258,11 +282,16 @@
                 reader.onload = function(event) {
                     const newImageSrc = event.target.result;
                     profilePic.src = newImageSrc;
-                    localStorage.setItem('profilePic', newImageSrc); // Save the image to localStorage
+                    localStorage.setItem('profilePic', newImageSrc);  // Save the image to localStorage
                 };
                 reader.readAsDataURL(file);
             }
         });
+
+        // Simple MD5 hash function (make sure you load an MD5 hashing library if not already included)
+        function md5(string) {
+            return CryptoJS.MD5(string).toString();
+        }
     </script>
 </body>
 </html>
