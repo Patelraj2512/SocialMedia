@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Professional Profile</title>
+
+    <!-- Add Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Universal Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;  /* Light gray background */
+            color: #333;  /* Dark gray text */
+            text-align: center;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;  /* White background for container */
+            padding: 40px;
+            border-radius: 8px;  /* Soft rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for card effect */
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        .profile-pic-container {
+            display: inline-block;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid #2980b9;
+            margin-bottom: 20px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .camera-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .camera-icon:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 22px;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+
+        .bio {
+            margin-bottom: 60px;
+        }
+
+        .bio-description {
+            font-size: 18px;
+            color: #2c3e50;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            color: #2c3e50;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            width: 220px;
+            height: 70px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            position: relative;
+        }
+
+        .social-link:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+            color: #ffffff;
+        }
+
+        .social-link i {
+            font-size: 30px;  /* Set icon size */
+            margin-right: 15px;
+        }
+
+        .instagram {
+            background-color: #e4405f;
+        }
+
+        .snapchat {
+            background-color: #fffc00;
+            color: #000;
+        }
+
+        .linkedin {
+            background-color: #0077b5;
+        }
+
+        .github {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .file-upload {
+            display: none;
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Picture Container -->
+        <div class="profile-pic-container">
+            <!-- Profile Picture -->
+            <img id="profile-pic" src="your-profile-pic.jpg" alt="Your Profile Picture" class="profile-pic">
+            <!-- Camera Icon -->
+            <i class="fas fa-camera camera-icon" id="camera-icon"></i>
+            <!-- File Input (Hidden) -->
+            <input type="file" id="file-input" class="file-upload" accept="image/*">
+        </div>
+
+        <!-- Name and Title below the profile picture -->
+        <header>
+            <h1>Raj Patel</h1>
+            <p class="title">B.Tech (IT) | Web Developer | Software Engineer | Tech Enthusiast</p>
+        </header>
+        
+        <!-- Bio Section -->
+        <section class="bio">
+            <p class="bio-description">
+                Hi, I'm Raj Patel, a B.Tech (IT) student at Charotar University of Science & Technology (CHARUSAT). I'm passionate about web development and technology, with expertise in Java, Spring, and full-stack development. I enjoy building intuitive, scalable web applications that solve real-world problems. Always eager to learn and collaborate, I am open to discussing tech innovations, potential projects, or exciting opportunities. Let's connect!
+            </p>
+        </section>
+        
+        <!-- Social Links Section -->
+        <section class="social-links">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/patelraj2512" target="_blank" class="social-link instagram">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <!-- Snapchat -->
+            <a href="https://www.snapchat.com/add/patel_raj2512" target="_blank" class="social-link snapchat">
+                <i class="fab fa-snapchat"></i> Snapchat
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/patel-raj-300141283/" target="_blank" class="social-link linkedin">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/Patelraj2512?tab=overview&from=2024-11-01&to=2024-11-30" target="_blank" class="social-link github">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/patelraj.patel.1840/" target="_blank" class="social-link facebook">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Raj Patel. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Font Awesome Script -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- JavaScript to handle image upload, restricted access, and saving to localStorage -->
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const profilePic = document.getElementById('profile-pic');
+        const cameraIcon = document.getElementById('camera-icon');
+        const correctPassword = "raj123"; // Set your password here (for demo purposes)
+
+        // Check if there is a saved profile picture in localStorage
+        window.onload = function() {
+            const savedImage = localStorage.getItem('profilePic');
+            if (savedImage) {
+                profilePic.src = savedImage; // Set the saved image as profile picture
+            }
+        };
+
+        // Trigger file input when the camera icon is clicked
+        cameraIcon.addEventListener('click', function() {
+            // Prompt user for password before allowing file upload
+            let password = prompt("Please enter the password to change the profile picture:");
+
+            // Check if password is correct
+            if (password === correctPassword) {
+                // Directly trigger file input after password validation
+                fileInput.click();
+            } else {
+                alert("Incorrect password. You are not authorized to change the profile picture.");
+            }
+        });
+
+        // Change profile picture when a new file is selected
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const newImageSrc = event.target.result;
+                    profilePic.src = newImageSrc;
+                    localStorage.setItem('profilePic', newImageSrc); // Save the image to localStorage
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
