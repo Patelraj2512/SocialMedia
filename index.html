@@ -18,24 +18,25 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;  /* Light gray background */
-            color: #333;  /* Dark gray text */
+            background: linear-gradient(to right, #1c92d2, #f2fcfe); /* Subtle gradient background */
+            color: #333;
             text-align: center;
             line-height: 1.6;
             padding: 20px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            background-color: #ffffff;  /* White background for container */
-            padding: 40px;
-            border-radius: 8px;  /* Soft rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for card effect */
+            background: linear-gradient(135deg, #ffffff, #dfe9f3); /* Light and elegant gradient */
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Softer shadow for a floating effect */
+            color: #2c3e50; /* Text color for readability */
         }
 
         header {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .profile-pic-container {
@@ -43,10 +44,10 @@
             position: relative;
             border-radius: 50%;
             overflow: hidden;
-            border: 6px solid #2980b9;
+            border: 6px solid #3498db; /* Soft blue border */
             margin-bottom: 20px;
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             cursor: pointer;
         }
 
@@ -57,180 +58,168 @@
         }
 
         h1 {
-            font-size: 50px;
-            color: #2c3e50;
-            margin-bottom: 10px;
+            font-size: 28px;
+            color: #2c3e50; /* Dark blue text for title */
         }
 
         .title {
-            font-size: 22px;
-            color: #7f8c8d;
-            margin-bottom: 40px;
-        }
-
-        .bio {
-            margin-bottom: 60px;
+            font-size: 16px;
+            color: #6c7a89; /* Muted gray for subtitle */
+            margin-bottom: 20px;
         }
 
         .bio-description {
-            font-size: 18px;
-            color: #2c3e50;
+            font-size: 14px;
+            color: #34495e; /* Soft blue for bio text */
             max-width: 800px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .social-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #ffffff;
-            color: #2c3e50;
-            padding: 15px 25px;
+            padding: 15px 20px;
             border-radius: 50px;
             text-decoration: none;
-            width: 220px;
-            height: 70px;
-            font-size: 18px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            position: relative;
-        }
-
-        .social-link:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
-            color: #ffffff;
-        }
-
-        .social-link i {
-            font-size: 30px;  /* Set icon size */
-            margin-right: 15px;
-        }
-
-        .instagram {
-            background-color: #e4405f;
-        }
-
-        .snapchat {
-            background-color: #fffc00;
-            color: #000;
-        }
-
-        .linkedin {
-            background-color: #0077b5;
-        }
-
-        .github {
-            background-color: #333;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
             color: #fff;
         }
 
-        .facebook {
-            background-color: #3b5998;
+        .social-link.instagram {
+            background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
         }
 
-        .file-upload {
-            display: none;
+        .social-link.snapchat {
+            background: linear-gradient(to right, #fffc00, #fffc57);
+            color: #000;
+        }
+
+        .social-link.linkedin {
+            background: linear-gradient(to right, #0072b1, #1c86d1);
+        }
+
+        .social-link.github {
+            background: linear-gradient(to right, #333, #666);
+        }
+
+        .social-link.facebook {
+            background: linear-gradient(to right, #3b5998, #4a69bd);
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
         }
 
         footer {
-            margin-top: 60px;
-            font-size: 16px;
-            color: #7f8c8d;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #6c7a89; /* Muted footer text color */
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .bio-description {
+                font-size: 13px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .social-link {
+                width: 90%; /* Full width on small screens */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Profile Picture Container -->
+        <!-- Profile Picture -->
         <div class="profile-pic-container" id="profile-pic-container">
-            <!-- Profile Picture -->
             <img id="profile-pic" src="your-profile-pic.jpg" alt="Your Profile Picture" class="profile-pic">
-            <!-- File Input (Hidden) -->
             <input type="file" id="file-input" class="file-upload" accept="image/*">
         </div>
 
-        <!-- Name and Title below the profile picture -->
+        <!-- Name and Title -->
         <header>
             <h1>Raj Patel</h1>
-            <p class="title">B.Tech (IT) | Web Developer | Software Engineer | Tech Enthusiast</p>
+            <p class="title">Web Developer | Software Engineer</p>
         </header>
-        
+
         <!-- Bio Section -->
         <section class="bio">
             <p class="bio-description">
-                Hi, I'm Raj Patel, a B.Tech (IT) student at Charotar University of Science & Technology (CHARUSAT). I'm passionate about web development and technology, with expertise in Java, Spring, and full-stack development. I enjoy building intuitive, scalable web applications that solve real-world problems. Always eager to learn and collaborate, I am open to discussing tech innovations, potential projects, or exciting opportunities. Let's connect!
+                Hi, I'm Raj Patel, a B.Tech (IT) student at Charotar University of Science & Technology (CHARUSAT). I'm passionate about web development and technology, with expertise in Java, Spring, and full-stack development. Always eager to learn and collaborate, I am open to discussing tech innovations, potential projects, or exciting opportunities. Let's connect!
             </p>
         </section>
-        
-        <!-- Social Links Section -->
+
+        <!-- Social Links -->
         <section class="social-links">
-            <!-- Instagram -->
             <a href="https://www.instagram.com/patelraj2512" target="_blank" class="social-link instagram">
                 <i class="fab fa-instagram"></i> Instagram
             </a>
-            <!-- Snapchat -->
             <a href="https://www.snapchat.com/add/patel_raj2512" target="_blank" class="social-link snapchat">
                 <i class="fab fa-snapchat"></i> Snapchat
             </a>
-            <!-- LinkedIn -->
             <a href="https://www.linkedin.com/in/patel-raj-300141283/" target="_blank" class="social-link linkedin">
                 <i class="fab fa-linkedin"></i> LinkedIn
             </a>
-            <!-- GitHub -->
-            <a href="https://github.com/Patelraj2512?tab=overview&from=2024-11-01&to=2024-11-30" target="_blank" class="social-link github">
+            <a href="https://github.com/Patelraj2512" target="_blank" class="social-link github">
                 <i class="fab fa-github"></i> GitHub
             </a>
-            <!-- Facebook -->
             <a href="https://www.facebook.com/patelraj.patel.1840/" target="_blank" class="social-link facebook">
                 <i class="fab fa-facebook"></i> Facebook
             </a>
         </section>
-        
+
         <!-- Footer -->
         <footer>
             <p>&copy; 2024 Raj Patel. All Rights Reserved.</p>
         </footer>
     </div>
 
-    <!-- Font Awesome Script -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-    <!-- JavaScript to handle image upload and saving to localStorage -->
+    <!-- JavaScript -->
     <script>
         const fileInput = document.getElementById('file-input');
         const profilePic = document.getElementById('profile-pic');
-        const profilePicContainer = document.getElementById('profile-pic-container');
 
-        // Check if there is a saved profile picture in localStorage
-        window.onload = function() {
+        window.onload = () => {
             const savedImage = localStorage.getItem('profilePic');
             if (savedImage) {
-                profilePic.src = savedImage; // Set the saved image as profile picture
+                profilePic.src = savedImage;
             }
         };
 
-        // Trigger file input when the profile picture is clicked
-        profilePicContainer.addEventListener('click', function() {
-            fileInput.click();
-        });
+        profilePic.addEventListener('click', () => fileInput.click());
 
-        // Change profile picture when a new file is selected
-        fileInput.addEventListener('change', function(e) {
+        fileInput.addEventListener('change', (e) => {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(event) {
-                    const newImageSrc = event.target.result;
-                    profilePic.src = newImageSrc;
-                    localStorage.setItem('profilePic', newImageSrc); // Save the image to localStorage
+                reader.onload = (event) => {
+                    profilePic.src = event.target.result;
+                    localStorage.setItem('profilePic', event.target.result);
                 };
                 reader.readAsDataURL(file);
             }
